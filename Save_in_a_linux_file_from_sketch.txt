@@ -1,0 +1,17 @@
+
+void loop()
+{
+  system("date '+%Y-%m-%d:%H:%M:%S' > /home/root/time.txt");     //get current time in the format- hours:minutes:secs
+  //and save in text file time.txt located in /home/root
+  
+  //getting access of the info inside time.txt file
+  FILE *fp;
+  fp = fopen("/home/root/time.txt", "r");
+  fgets(tempo, 20, fp);
+  fclose(fp);
+  Serial.print("The current time is ");
+  Serial.println(tempo);
+
+}
+
+
